@@ -1,0 +1,25 @@
+{{> headers title="Estás en Games"}}
+
+    <h1 class="text-center p-5">{{titulo}}</h1>
+    <div class="container p-5">
+        <table class="table table-dark table-hover">
+            <thead class="text-center">
+            <tr >
+                <th scope="col">Id</th>
+                <th scope="col">Nombre Juego</th>
+                <th scope="col">Género del Juego</th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            <tr>
+                {{#each games}}
+                <th scope="row">{{this.id}} </th>
+                <td>{{this.nombre}}</td>
+                <td>{{this.genero}}</td>
+            </tr>
+                {{/each}}
+        </tbody>
+        </table>
+    </div>
+
+{{> footer year = 2023}}

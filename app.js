@@ -19,6 +19,26 @@ app.get("/",(req,res = response) => {
     });
 });
 
+app.get("/soporte",(req,res = rsesponse) => {
+    res.render('soporte',{
+        titulo:'¿Cómo podemos ayudarte?',
+        estado: false,
+        soporte: 'Recuperación de la cuenta'
+    });
+});
+
+app.get("/games",(req,res=response) => {
+    res.render('games',{
+        titulo: 'Lista de juegos',
+        games: [
+            { id:'1', nombre:'Valorant',genero:'Shooter' },
+            { id:'2', nombre:'Heroes of the storm',genero:'Moba'},
+            { id:'3', nombre:'League of legends',genero:'Moba' },
+            { id:'4', nombre:'Overwatch',genero:'Acción por equipos' }
+        ]
+    });
+});
+
 //Inicia servidor
 app.listen(port,()=> {
     console.log(('servidor preparado en el puerto'),port)
